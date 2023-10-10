@@ -1,0 +1,27 @@
+nav ul{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-around;
+  font-size: 3em;
+
+}
+nav{
+  background-color: #90A17D;  
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+li a{
+  color: white;
+}
+.bookNav{
+  top: auto;
+  bottom: 0;
+  background-color: #F4A442;
+}
+
+
+
+

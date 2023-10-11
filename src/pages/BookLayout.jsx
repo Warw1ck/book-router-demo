@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 
 export function BookLayout() {
@@ -7,20 +7,20 @@ export function BookLayout() {
             <nav className="bookNav">
                 <ul>
                     <li>
-                        <Link to="/books/1">
+                        <NavLink to="/books/1">
                             Book1
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/books/2'>
+                        <NavLink to='/books/2'>
                             Book2
-                        </Link>
+                        </NavLink>
 
                     </li>
                     <li>
-                        <Link to='/books/new'>
+                        <NavLink to='/books/new'>
                             New Book
-                        </Link>
+                        </NavLink>
 
                     </li>
                 </ul>

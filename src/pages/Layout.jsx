@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 
 export function Layout(params) {
@@ -7,14 +7,14 @@ export function Layout(params) {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/">
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/books'>
+                        <NavLink to='/books'>
                             Books
-                        </Link>
+                        </NavLink>
 
                     </li>
                 </ul>

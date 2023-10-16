@@ -21,7 +21,7 @@ export function NewBook() {
             <input autocomplete="off" name="Email" id="Email" className="input" type="number" value={number} onChange={(e) => {setSearchParams({n:e.target.value})}}/>
             <div></div></div>
             
-            <button action='submit' class="button-24" role="button">Get Book</button>
+            <button action='submit' className="button-24" role="button">Get Book</button>
 
         </form>
     </>)

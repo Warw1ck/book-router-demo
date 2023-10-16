@@ -1,37 +1,37 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Home } from './pages/Home';
-import { Books } from './pages/Books';
-import { Layout } from './pages/Layout';
-import { Book } from './pages/Book';
-import { NewBook } from './pages/NewBook';
-
-
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Home } from "./pages/Home";
+import { Books } from "./pages/Books";
+import { Layout } from "./pages/Layout";
+import { Book } from "./pages/Book";
+import { NewBook } from "./pages/NewBook";
+import { LoginPage } from "./pages/Login";
+import PrivateWrapper from "./utills/PrivateRoutes";
+import LoginWrapper from "./utills/LoginWrapper";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(0);
   return (
-    
     <>
-      <Layout/>
-      
-      <h1>
-        Hello
-      </h1>
+      <Layout />
+
+      <h1>Hello</h1>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/books' >
-          <Route index element={<Books/>} />
-          <Route path=':id' element={<Book/>} />
-          <Route path='new' element={<NewBook/>}/>
+        <Route element={<PrivateWrapper />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/books">
+            <Route index element={<Books />} />
+            <Route path=":id" element={<Book />} />
+            <Route path="new" element={<NewBook />} />
+          </Route>
+        </Route>
+        <Route element={<LoginWrapper />}>
+          <Route path="/login" element={<LoginPage />} />
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

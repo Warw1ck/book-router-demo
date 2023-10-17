@@ -11,14 +11,15 @@ import PrivateWrapper from "./utills/PrivateRoutes";
 import LoginWrapper from "./utills/LoginWrapper";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [userStatus, setCount] = useState(true);
+  
   return (
     <>
-      <Layout />
+      <Layout isAuthenticated={userStatus}/>
 
       <h1>Hello</h1>
       <Routes>
-        <Route element={<PrivateWrapper />}>
+        <Route element={<PrivateWrapper isAuthenticated={userStatus} />}>
           <Route path="/" element={<Home />} />
           <Route path="/books">
             <Route index element={<Books />} />
@@ -26,8 +27,8 @@ function App() {
             <Route path="new" element={<NewBook />} />
           </Route>
         </Route>
-        <Route element={<LoginWrapper />}>
-          <Route path="/login" element={<LoginPage />} />
+        <Route element={<LoginWrapper isAuthenticated={userStatus} />}>
+          <Route path="/login" element={<LoginPage  />} />
         </Route>
       </Routes>
     </>

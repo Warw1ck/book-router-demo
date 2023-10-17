@@ -1,26 +1,32 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
+export function Layout({ isAuthenticated }) {
+  const LoginLinks = [
+    { path: "/", name: "Home" },
+    { path: "/books", name: "Books" },
+  ];
+  const NotLoginLinks = [
+    { path: "/login", name: "Login" },
+    { path: "/", name: "Register" },
+  ];
 
-export function Layout(params) {
-    return(
-        <>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/">
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/books'>
-                            Books
-                        </NavLink>
+  const [links, setLinks] = useState(
+    isAuthenticated ? LoginLinks : NotLoginLinks
+  );
 
-                    </li>
-                </ul>
-            
-            
-            </nav>
-        </>
-    )
+  return (
+    <>
+      <nav>
+        <ul>
+        {links.map((linkInfo) => (
+          <li key={linkInfo.path}>
+            <NavLink to={linkInfo.path}>{linkInfo.name}</NavLink>
+          </li>
+        ))}
+          
+        </ul>
+      </nav>
+    </>
+  );
 }

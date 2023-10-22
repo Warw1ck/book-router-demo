@@ -7,31 +7,29 @@ import { Layout } from "./pages/Layout";
 import { Book } from "./pages/Book";
 import { NewBook } from "./pages/NewBook";
 import { LoginPage } from "./pages/Login";
-import PrivateWrapper from "./utills/PrivateRoutes";
-import LoginWrapper from "./utills/LoginWrapper";
+import PrivateWrapper from "./utils/PrivateRoutes";
+import LoginWrapper from "./utils/LoginWrapper";
+import { AuthProvider } from "./context/AutContext";
 
 function App() {
-  const [userStatus, setCount] = useState(true);
-  
-  return (
-    <>
-      <Layout isAuthenticated={userStatus}/>
 
-      <h1>Hello</h1>
+  return (
+    <AuthProvider>
+      <Layout />
       <Routes>
-        <Route element={<PrivateWrapper isAuthenticated={userStatus} />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/books">
-            <Route index element={<Books />} />
-            <Route path=":id" element={<Book />} />
-            <Route path="new" element={<NewBook />} />
+          <Route element={<PrivateWrapper/>}>
+            <Route path="/" element={<Home />} />
+            <Route path="/books">
+              <Route index element={<Books />} />
+              <Route path=":id" element={<Book />} />
+              <Route path="new" element={<NewBook />} />
+            </Route>
           </Route>
-        </Route>
-        <Route element={<LoginWrapper isAuthenticated={userStatus} />}>
-          <Route path="/login" element={<LoginPage  />} />
-        </Route>
+          <Route element={<LoginWrapper/>}>
+            <Route path="/login" element={<LoginPage />} />
+          </Route>
       </Routes>
-    </>
+    </AuthProvider>
   );
 }
 

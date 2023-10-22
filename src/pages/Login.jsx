@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import AuthContext from "../context/AutContext";
+
 export function LoginPage() {
+  const {user, loginUser} = useContext(AuthContext)
   return (
     <>
-      <form>
+      <h1>
+        LOGIN
+      </h1>
+      <form onSubmit={loginUser}>
         <input
           name="username"
           id="username"

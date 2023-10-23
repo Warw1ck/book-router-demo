@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bookshop_backend_demo.authentification',
-
+    'bookshop_backend_demo.books',
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist'
+
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

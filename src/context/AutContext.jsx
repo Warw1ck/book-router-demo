@@ -45,12 +45,7 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("authToken");
   };
 
-  const context = {
-    user: user,
-    loginUser: loginUser,
-    authToken: authToken,
-    logOut: logout,
-  };
+
 
   const updateToken = async () => {
     const response = await fetch("http://127.0.0.1:8000/api/token/refresh/", {
@@ -71,21 +66,29 @@ export function AuthProvider({ children }) {
     if (loading) {
       setLoading(false);
     }
+    console.log(`Print Data from UpdateToken:`)
+    console.log(data)
+    return data
+
   };
 
   useState(() => {
     if (loading) {
       updateToken();
     }
-    const fourMinutes = 1000 * 60 * 4;
-
-    let interval = setInterval(() => {
-      if (authToken) {
-        updateToken();
-      }
-    }, fourMinutes);
-    return () => clearInterval(interval);
   }, [authToken, loading]);
+
+
+  const context = {
+    user: user,
+    authToken: authToken,
+
+    loginUser: loginUser,
+    logOut: logout,
+    updateToken: updateToken,
+
+  };
+
 
   return (
     <AuthContext.Provider value={context}>

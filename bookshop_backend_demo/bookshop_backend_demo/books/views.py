@@ -17,7 +17,7 @@ class UserBooksList(ListCreateAPIView):
         user = self.request.user
 
         # Use the user to filter the queryset if needed
-        queryset = user.set_books.all()
+        queryset = user.books.all()
 
         return queryset
 

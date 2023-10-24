@@ -50,5 +50,11 @@ li a{
     transform: rotate(360deg);
   }
 }
-
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: blue;
+}
 

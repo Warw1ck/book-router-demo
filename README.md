@@ -1,5 +1,5 @@
 # Books-Router-Demo
-![bookRouter_1](https://github.com/Warw1ck/book-router-demo/assets/114092919/096d246f-dcd8-4f38-abb9-ed88a63f1823)
-![bookRouter_4](https://github.com/Warw1ck/book-router-demo/assets/114092919/c8c95191-bb17-4610-8daf-c07f874b6c6b)
-![bookRouter_2](https://github.com/Warw1ck/book-router-demo/assets/114092919/25388ce3-ca15-4f76-8bcb-432ae77fafc8)
-![bookRouter_3](https://github.com/Warw1ck/book-router-demo/assets/114092919/e6ae9b39-0bf7-4d17-a7fe-28ab56f5fda8)
+![new_book2](https://github.com/Warw1ck/book-router-demo/assets/114092919/c8a0bc9e-b8c3-4495-9e1a-3a4ad0d74d31)
+![new_book](https://github.com/Warw1ck/book-router-demo/assets/114092919/53d3299a-00f6-4b30-b4f9-1d89b018be87)
+![new_book1](https://github.com/Warw1ck/book-router-demo/assets/114092919/5fbfdb01-8ec0-40b2-bb47-25c1cc721b89)
+![new_book_5](https://github.com/Warw1ck/book-router-demo/assets/114092919/bd498e14-cf00-4398-8257-a370c742cf6c)
